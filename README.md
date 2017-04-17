@@ -108,6 +108,17 @@ Download, extract and compile GoAccess with:
     $ make
     # make install
 
+### Build from GitHub (Development), supporting recognization of IP in China ###
+
+    $ git clone https://github.com/rosbit/goaccess.git
+    $ cd goaccess
+    $ autoreconf -fiv
+    $ ./configure --enable-utf8 --enable-geoip=ip2region
+    $ make
+    # make install
+    // This ip2region data could be download from https://github.com/lionsoul2014/ip2region,
+	// and the running usage option is: --geoip-database=/path/to/ip2region.db
+
 ### Docker ###
 
 Prior to run GoAccess' Docker container, place and set your GoAccess

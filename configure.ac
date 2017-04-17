@@ -70,9 +70,13 @@ elif test "$geoip" = "legacy"; then
   ])])
   geolocation="GeoIP Legacy"
   AC_DEFINE([HAVE_GEOLOCATION], 1, [Build using GeoIP.]),
+elif test "$geoip" = "ip2region"; then
+  geolocation="Ip2Region"
+  AC_DEFINE([HAVE_GEOLOCATION], 1, [Build using GeoIP.]),
 fi
 AM_CONDITIONAL([GEOIP_LEGACY], [test "x$geoip" = "xlegacy"])
 AM_CONDITIONAL([GEOIP_MMDB], [test "x$geoip" = "xmmdb"])
+AM_CONDITIONAL([GEOIP_IP2REGION], [test "x$geoip" = "xip2region"])
 
 # GNU getline / POSIX.1-2008
 AC_ARG_WITH(getline, [  --with-getline Build using dynamic line buffer.],

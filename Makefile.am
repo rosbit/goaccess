@@ -143,6 +143,14 @@ goaccess_SOURCES +=  \
    src/geoip.h
 endif
 
+if GEOIP_IP2REGION
+goaccess_SOURCES +=  \
+   src/geoip3.c \
+   src/geoip.h \
+   src/ip2region.h \
+   src/ip2region.c
+endif
+
 if DEBUG
 AM_CFLAGS = -DDEBUG -O0 -g -DSYSCONFDIR=\"$(sysconfdir)\"
 else
